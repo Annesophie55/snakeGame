@@ -12,19 +12,26 @@
     <p>If the snake touches the wall or itself, you lose !</p>
     <div class="gameContainer">
         <div id="game">
-            <div class="snakeSegment"></div>
-            <div class="snakeSegment"></div>
-            <div class="snakeSegment"></div>
+            <div class="snakeSegment" style="left:290px; top:190px;"></div>
+            <div class="snakeSegment" style="left:300px; top:190px;"></div>
+            <div class="snakeSegment" style="left:310px; top:190px;"></div>
+            <img id="mouse" src="mouse.svg" alt="mouse">
         </div>
-        <ul id="scores">
-          <li id="bestScore" class="bestScore"></li>
-          <li id="lastScore" class="lastScore"></li>
-          <li id="newScore" class="newScore"></li>
-          <li id="newBestScoreAlert" class="newBestScoreAlert"></li>
-        </ul>
+        <div id="utils">
+          <ul id="scores">
+            <li>Your best score</li>
+            <li id="bestScore" class="bestScore"></li>
+            <li>Your last score</li>
+            <li id="lastScore" class="lastScore"></li>
+            <li>Your new score</li>
+            <li id="newScore" class="newScore"></li>
+            <li id="newBestScoreAlert" class="newBestScoreAlert"></li>
+          </ul>
+          <button type="button">New Game</button>
+        </div>
     </div>
 
   </div>
-  
+  <script src="script.js"></script>
 </body>
 </html>
