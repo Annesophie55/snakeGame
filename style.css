@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.gameContainer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#game {
+  width: 600px;
+  height: 400px;
+  background-color: #b3f1a3;
+  border: 5px double rgb(13, 68, 8);
+}
+
+.segment {
+  width: 10px;
+  height: 10px;
+  background-color: #0b0b0b;
+}
