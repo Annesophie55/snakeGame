@@ -55,12 +55,6 @@ button {
   position: relative;
 }
 
-.snakeSegment {
-  width: 10px;
-  height: 10px;
-  background-color: #0f5305;
-  position: absolute;
-}
 
 #utils {
   display: flex;
