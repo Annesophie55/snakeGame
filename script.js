@@ -1,6 +1,7 @@
 const mouseScore = 50;
 const intervalScore = 2;
 let mousePlace = [{x: 0, y: 0}];
+let trappPlace = [{x: 0, y: 0}];
 const errorMargin = 20;
 let gameInProgress = false;
 const game = document.querySelector('#game');
@@ -29,7 +30,6 @@ function getRandomNumber(min, max) {
 };
 
 function putTheMouse() {
-
   // Définition aléatoire de la position de la souris
   mousePlace = [
     {x:getRandomNumber(40, 560), y:getRandomNumber(40,360)}
@@ -37,11 +37,26 @@ function putTheMouse() {
   const mouse = document.createElement('img');
   mouse.className = "mouse";
   mouse.src = 'mouse.svg';
-  mouse.alt = 'souris';
+  mouse.alt = 'mouse';
   mouse.style.left = mousePlace[0].x + 'px';
   mouse.style.top = mousePlace[0].y + 'px';
   game.appendChild(mouse);
   return mousePlace[0].x , mousePlace[0].y;
+}
+
+function putTheTrap() {
+  // Définition aléatoire de la position de la souris
+  trappPlace = [
+    {x:getRandomNumber(40, 560), y:getRandomNumber(40,360)}
+  ];
+  const trap = document.createElement('img');
+  trap.className = "trap";
+  trap.src = 'trapp.png';
+  trap.alt = 'trapp';
+  trap.style.left = trappPlace[0].x + 'px';
+  trap.style.top = trappPlace[0].y + 'px';
+  game.appendChild(trap);
+  return trappPlace[0].x , trappPlace[0].y;
 }
 
 function putTheSnake() {
@@ -184,6 +199,13 @@ document.querySelector('.newGame').addEventListener('click', ()=> {
     moveInterval = setInterval(() => {
       snakeMoves(snakeWay);
     }, timeInterval);
+    let trapDOM = document.querySelector('.trap');
+    if(trapDOM){
+      trapDOM.remove();
+    }
+    trapInterval = setInterval(() => {
+      putTheTrap();
+    }, 50000);
   }
 });
 
@@ -197,6 +219,8 @@ document.addEventListener('keydown', (e) => {
 
 putTheMouse();
 initializeSnakePosition();
+
+
 
 
 
